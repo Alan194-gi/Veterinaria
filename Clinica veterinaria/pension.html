@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensión Canina | Benji & Terry</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Benji & Terry</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="estetica.html">Estética</a>
+            <a href="pension.html" style="color: var(--secondary-color);">Pensión</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="citas.html">Citas</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="hero-text">
+            <h1 style="color: var(--secondary-color);">Tu mascota en buenas manos</h1>
+            <p>¿Planeas un viaje? En nuestra pensión, tu perro disfrutará de un ambiente seguro, paseos diarios y socialización supervisada. Nos aseguramos de que su estancia sea tan divertida como tus vacaciones.</p>
+            <div style="display: flex; gap: 10px; margin-top: 1.5rem;">
+                <div style="background: #E3F2FD; padding: 12px; border-radius: 8px; flex: 1; text-align: center; font-size: 0.9rem;">
+                    <strong>Vigilancia 24/7</strong>
+                </div>
+                <div style="background: #E3F2FD; padding: 12px; border-radius: 8px; flex: 1; text-align: center; font-size: 0.9rem;">
+                    <strong>Atención Médica</strong>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="img/imagen8.jpg" alt="imagen 8" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        </div>
+    </section>
+
+    <section class="container" style="justify-content: center; background-color: #f0f4f8; padding: 4rem 2rem; border-radius: var(--border-radius);">
+        <form id="formPension" onsubmit="event.preventDefault(); calcularPension();">
+            <h2 style="text-align: center; color: var(--secondary-color);">Calculadora de Estancia</h2>
+            <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">
+                Ingresa los detalles para conocer el costo total del hospedaje.
+            </p>
+
+            <label for="nombrePerroPension">Nombre de la mascota:</label>
+            <input type="text" id="nombrePerroPension" placeholder="Ej. Max" required>
+
+            <label for="dias">Número de noches:</label>
+            <input type="number" id="dias" placeholder="Cantidad de días" min="1" oninput="calcularPension()" required>
+
+            <label for="costoDia">Costo por noche ($):</label>
+            <input type="number" id="costoDia" value="250" readonly style="background-color: #edf2f7; cursor: not-allowed;">
+            <small style="display: block; margin-top: -10px; margin-bottom: 15px; color: var(--text-muted);">
+                *Tarifa fija por noche: $250.00 MXN
+            </small>
+
+            <button type="submit" class="btn-submit" style="background-color: var(--secondary-color); box-shadow: 0 4px 12px rgba(93, 156, 236, 0.3);">
+                Confirmar Presupuesto
+            </button>
+
+            <div id="resPension" class="resultado-box" style="display: none; border-left-color: var(--secondary-color); background-color: #E3F2FD; color: #1E3A8A;">
+                Costo total: $0
+            </div>
+        </form>
+    </section>
+
+    <section class="container">
+        <div class="hero-image">
+            <img src="img/imagen9.jpg" alt="imagen 9" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        </div>
+        <div class="hero-text">
+            <h2>Instalaciones de Primer Nivel</h2>
+            <p>Contamos con suites individuales climatizadas y áreas de juego al aire libre. La psicología del color azul en nuestras áreas de descanso ayuda a que los huéspedes mantengan un ritmo cardíaco estable y una sensación de seguridad constante.</p>
+        </div>
+    </section>
+
+    <footer 
+    style="text-align: center; padding: 3rem; color: var(--text-muted); font-size: 0.85rem;">
+        <p>&copy; 2026 Benji & Terry Clínica Integral | Alan Yesahel Saucillo Villanueva - UPIICSA</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Función para asegurar que el cuadro sea visible al calcular
+        const originalCalcularP = calcularPension;
+        calcularPension = function() {
+            document.getElementById('resPension').style.display = 'block';
+            originalCalcularP();
+        }
+    </script>
+</body>
+</html>

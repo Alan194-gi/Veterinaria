@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estética Canina | Benji & Terry</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Benji & Terry</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="estetica.html" style="color: var(--primary-color);">Estética</a>
+            <a href="pension.html">Pensión</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="citas.html">Citas</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="hero-image">
+            <img src="img/imagen6.jpg" alt="imagen 6" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        </div>
+        <div class="hero-text">
+            <h1 style="color: var(--primary-color);">Estética y Bienestar</h1>
+            <p>Un perro limpio es un perro feliz. Nuestro servicio de estética utiliza productos hipoalergénicos y técnicas de relajación para que tu mascota disfrute su transformación.</p>
+            <p>Contamos con especialistas en cortes de raza y baños terapéuticos que cuidan la piel de tu mejor amigo.</p>
+        </div>
+    </section>
+
+    <section class="container" style="justify-content: center; background-color: #ffffff; padding: 3rem 0; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        <form id="formEstetica" onsubmit="event.preventDefault(); calcularEstetica();">
+            <h2 style="text-align: center; color: var(--primary-color);">Cotiza tu Servicio</h2>
+            <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">
+                El precio total se ajusta automáticamente según el tamaño seleccionado.
+            </p>
+
+            <label for="nombreDueño">Nombre del dueño:</label>
+            <input type="text" id="nombreDueño" placeholder="Tu nombre" required>
+
+            <label for="nombrePerro">Nombre del perro:</label>
+            <input type="text" id="nombrePerro" placeholder="Nombre de tu mascota" required>
+
+            <label for="tamano">Tamaño del perro:</label>
+            <select id="tamano" onchange="calcularEstetica()">
+                <option value="1">Pequeño (Precio Base)</option>
+                <option value="1.5">Mediano (+50% sobre base)</option>
+                <option value="2">Grande (+100% sobre base)</option>
+            </select>
+
+            <label style="margin-bottom: 1rem; display: block; font-weight: bold;">Servicios requeridos:</label>
+            <div style="background: #F1F8E9; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid #C5E1A5;">
+                <label style="font-weight: normal; cursor: pointer; display: flex; align-items: center; margin-bottom: 12px;">
+                    <input type="checkbox" id="bano" onchange="calcularEstetica()" style="width: auto; margin-right: 15px;"> 
+                    Baño Integral ($100 base)
+                </label>
+                <label style="font-weight: normal; cursor: pointer; display: flex; align-items: center; margin-bottom: 12px;">
+                    <input type="checkbox" id="corte" onchange="calcularEstetica()" style="width: auto; margin-right: 15px;"> 
+                    Corte de Pelo ($80 base)
+                </label>
+                <label style="font-weight: normal; cursor: pointer; display: flex; align-items: center;">
+                    <input type="checkbox" id="spa" onchange="calcularEstetica()" style="width: auto; margin-right: 15px;"> 
+                    Sesión de Spa ($120 base)
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit">Registrar Servicio</button>
+
+            <div id="resEstetica" class="resultado-box" style="display: none;">
+                Total: $0.00
+            </div>
+        </form>
+    </section>
+
+    <section class="container">
+        <div class="hero-text">
+            <h2>Resultados Profesionales</h2>
+            <p>Nuestras estaciones de trabajo están siempre esterilizadas. El uso de tonos verdes en nuestra decoración ayuda a que los perros se mantengan en un estado de calma orgánica mientras trabajamos en su belleza.</p>
+        </div>
+        <div class="hero-image">
+            <img src="img/imagen7.jpg" alt="imagen 7" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.8rem;">
+        <p>&copy; 2026 Benji & Terry Clínica Integral | Alan Yesahel Saucillo Villanueva - UPIICSA</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

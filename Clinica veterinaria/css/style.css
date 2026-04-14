@@ -1,0 +1,209 @@
+:root {
+    /* PSICOLOGÍA: Salud, naturaleza y calma */
+    --primary-color: #7A9D8C; 
+    /* PSICOLOGÍA: Confianza y cercanía */
+    --secondary-color: #A3B18A; 
+    /* PSICOLOGÍA: Calidez y amplitud (Blanco Hueso) */
+    --bg-color: #F9F7F2; 
+    /* PSICOLOGÍA: Limpieza y orden (Blanco Puro) */
+    --card-bg: #FFFFFF; 
+    /* PSICOLOGÍA: Autoridad y elegancia (Gris Carbón) */
+    --text-main: #333D37; 
+    /* PSICOLOGÍA: Suavidad y discreción */
+    --text-muted: #6B7280; 
+    
+    --border-radius: 12px;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Sombra sutil para minimalismo */
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- HEADER MINIMALISTA --- */
+header {
+    background: var(--card-bg);
+    padding: 1.2rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #EDEDED; /* Línea fina en lugar de sombra pesada */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- CONTENEDORES --- */
+.container {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.hero-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.hero-image img {
+    border: none !important; /* Limpieza visual */
+    box-shadow: var(--shadow);
+}
+
+/* --- FORMULARIO Y CARRITO --- */
+form {
+    background: var(--card-bg); /* Fondo blanco para resaltar */
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #F1F1F1;
+}
+
+h2 {
+    color: var(--text-main);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-main);
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1.5px solid #EAEAEA;
+    border-radius: 8px;
+    background-color: #FAFAFA;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #fff;
+}
+
+/* --- BOTÓN DE ACCIÓN --- */
+.btn-submit {
+    width: 100%;
+    background-color: var(--text-main); /* Botón carbón: transmite seguridad */
+    color: white;
+    padding: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-color); /* Cambia a verde al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(122, 157, 140, 0.2);
+}
+
+/* --- RESULTADO --- */
+.resultado-box {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background-color: #F0F4F2; /* Verde muy sutil */
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--card-bg);
+    color: var(--text-muted);
+    padding: 3rem 10%;
+    text-align: center;
+    border-top: 1px solid #EDEDED;
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    nav a {
+        margin: 0.5rem;
+        font-size: 0.8rem;
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .container {
+        margin: 2rem auto;
+        gap: 2rem;
+    }
+}

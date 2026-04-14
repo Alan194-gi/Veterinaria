@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda | Benji & Terry</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Benji & Terry</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="estetica.html">Estética</a>
+            <a href="pension.html">Pensión</a>
+            <a href="tienda.html" style="color: #DD6B20;">Tienda</a>
+            <a href="citas.html">Citas</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="hero-image">
+            <img src="img/imagen10.jpg" alt="imagen 10" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow); border: 1px solid #FBD38D;">
+        </div>
+        <div class="hero-text">
+            <h1 style="color: #DD6B20;">Calidad en cada detalle</h1>
+            <p>Seleccionamos productos premium que garantizan la salud y diversión de tu mascota[cite: 18].</p>
+            <div style="background: #FFF3E0; padding: 1.2rem; border-radius: 8px; border-left: 5px solid #DD6B20; margin-top: 1rem;">
+                <p style="margin: 0; font-weight: bold; color: #7B341E;">🎁 Beneficio Especial:</p>
+                <p style="margin: 0; font-size: 0.9rem;">En compras mayores a $500, ¡recibe un descuento de $50!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" style="justify-content: center; background-color: #ffffff; padding: 4rem 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        <form id="formTienda" onsubmit="event.preventDefault(); calcularCompra();">
+            <h2 style="text-align: center; color: #DD6B20;">Carrito de Compras</h2>
+            
+            <div id="lista-productos" style="margin-bottom: 2rem; color: #000000;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #eee;">
+                    <span>Alimento Premium Perro ($150)</span>
+                    <input type="number" class="cant-prod" data-precio="150" value="0" min="0" oninput="calcularCompra()" style="width: 80px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #eee;">
+                    <span>Alimento Premium Gato ($120)</span>
+                    <input type="number" class="cant-prod" data-precio="120" value="0" min="0" oninput="calcularCompra()" style="width: 80px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #eee;">
+                    <span>Juguete Interactivo ($85)</span>
+                    <input type="number" class="cant-prod" data-precio="85" value="0" min="0" oninput="calcularCompra()" style="width: 80px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #eee;">
+                    <span>Cama Ortopédica ($350)</span>
+                    <input type="number" class="cant-prod" data-precio="350" value="0" min="0" oninput="calcularCompra()" style="width: 80px;">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit" style="background-color: #DD6B20;">
+                Verificar Total
+            </button>
+
+            <div id="resTienda" class="resultado-box" style="display: none; border-left: 5px solid #DD6B20; background-color: #FFE0B2; color: #000000; font-weight: bold; padding: 1rem; margin-top: 1rem; border-radius: 4px;">
+                Total: $0.00
+            </div>
+        </form>
+    </section>
+
+    <footer style="text-align: center; padding: 3rem; color: var(--text-muted); font-size: 0.85rem;">
+        <p>&copy; 2026 Benji & Terry Clínica Integral | Alan Yesahel Saucillo Villanueva - UPIICSA [cite: 107]</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

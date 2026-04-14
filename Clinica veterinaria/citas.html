@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas Médicas | Benji & Terry</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Benji & Terry</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="estetica.html">Estética</a>
+            <a href="pension.html">Pensión</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="citas.html" style="color: var(--primary-color);">Citas</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="hero-text">
+            <h1 style="color: var(--primary-color);">Salud y Prevención</h1>
+            <p>La atención médica oportuna es vital. En Benji & Terry contamos con consultorios equipados para brindar diagnósticos precisos en un ambiente de calma.</p>
+            <div style="background: #E8F5E9; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                <p style="margin: 0; font-size: 0.9rem;"><strong>Atención:</strong> Por favor, asegúrate de traer la cartilla de vacunación de tu mascota en cada visita.</p>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="img/imagen12.jpg" alt="imagen 12" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        </div>
+    </section>
+
+    <section class="container" style="justify-content: center; background-color: #ffffff; padding: 4rem 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        <form id="formCitas" onsubmit="event.preventDefault(); calcularCambio();">
+            <h2 style="text-align: center; color: var(--primary-color);">Registro de Consulta</h2>
+            
+            <label for="nombreDueñoCita">Nombre del Propietario:</label>
+            <input type="text" id="nombreDueñoCita" placeholder="Nombre completo" required>
+
+            <label for="consulta">Tipo de Servicio Médico:</label>
+            <select id="consulta" onchange="calcularCambio()">
+                <option value="350">Consulta General ($350)</option>
+                <option value="500">Consulta Especializada ($500)</option>
+                <option value="250">Esquema de Vacunación ($250)</option>
+                <option value="150">Desparasitación ($150)</option>
+            </select>
+
+            <label for="pago">Monto con el que paga ($):</label>
+            <input type="number" id="pago" placeholder="Monto recibido" oninput="calcularCambio()" required>
+
+            <button type="submit" class="btn-submit">Procesar Pago</button>
+
+            <div id="resCita" class="resultado-box" style="display: none;">
+                Cambio: $0.00
+            </div>
+        </form>
+    </section>
+
+    <section class="container">
+        <div class="hero-image">
+            <img src="img/imagen13.jpg" alt="imagen 13" style="width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+        </div>
+        <div class="hero-text">
+            <h2>Profesionales a su servicio</h2>
+            <p>Nuestros médicos veterinarios están en constante capacitación. El uso del color verde en nuestras áreas médicas promueve un estado de relajación tanto para el dueño como para el paciente, facilitando la revisión clínica.</p>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 3rem; color: var(--text-muted); font-size: 0.85rem;">
+        <p>&copy; 2026 Benji & Terry Clínica Integral | Alan Yesahel Saucillo Villanueva - UPIICSA</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Función para asegurar visibilidad del resultado
+        const originalCalcularC = calcularCambio;
+        calcularCambio = function() {
+            document.getElementById('resCita').style.display = 'block';
+            originalCalcularC();
+        }
+    </script>
+</body>
+</html>
